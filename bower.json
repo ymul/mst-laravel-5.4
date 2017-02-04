@@ -1,0 +1,11 @@
+{
+  "name": "Laravel",
+  "description": "My Application",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor/bower_components",
+    "test",
+    "tests"
+  ]
+}

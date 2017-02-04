@@ -178,6 +178,10 @@ return [
         App\Providers\RouteServiceProvider::class,
         Kodeine\Acl\AclServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        /*
+        * Acacha AdminLTE template provider
+        */
+        Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
 
     ],
 
@@ -229,6 +233,10 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        /*
+        * Acacha AdminLTE template alias
+        */
+        'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
 
     ],
 

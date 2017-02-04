@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Kodeine\Acl\Models\Eloquent\User;
+use App\User;
+use Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+/**
+ * Class RegisterController
+ * @package %%NAMESPACE%%\Http\Controllers\Auth
+ */
 class RegisterController extends Controller
 {
     /*
@@ -23,7 +27,17 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**
-     * Where to redirect users after registration.
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        return redirect('/');
+    }
+
+    /**
+     * Where to redirect users after login / registration.
      *
      * @var string
      */
@@ -48,11 +62,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'username' => 'required|max:255',
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
+            'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'terms' => 'required',
         ]);
     }
 
@@ -64,13 +77,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
-            'username' => $data['username'],
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
+        return User::create([
+            'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
-        return $user;
     }
 }
