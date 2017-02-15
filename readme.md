@@ -54,6 +54,6 @@ $ composer update
 ```
 $ php artisan migrate:refresh --seed
 ```
-Role : Administrator
-Username : default@system.dev
-Password : defaultpwd
+- Role : Administrator
+- Username : default@system.dev
+- Password : defaultpwd
