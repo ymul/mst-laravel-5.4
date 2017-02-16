@@ -9,17 +9,17 @@
     <div id="app">
         <div class="login-box">
             <div class="login-logo">
-                <a href="{{ url('/home') }}"><b>Laravel</b>5.4</a>
+                <b>Login</b> System
             </div><!-- /.login-logo -->
 
         @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+            <div class="alert alert-danger alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              <p><strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}</p>
+              <br>
+              @foreach ($errors->all() as $error)
+                  <p>{{ $error }}</p>
+              @endforeach
             </div>
         @endif
 

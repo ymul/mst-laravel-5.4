@@ -1,0 +1,9 @@
+label {
+  padding-left: 0px !important;
+}
+a:hover{
+  text-decoration: none !important;
+}
+.navbar-nav > .user-menu > .dropdown-menu {
+  padding: 0 0 0 0 !important;
+}
